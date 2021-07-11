@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>No Mans API</name>
+    </assembly>
+    <members>
+        <member name="M:No_Mans_API.API.Extensions.ByteExtensions.ToHexCode(System.Byte,System.Boolean)">
+            <summary>
+            Returns the Hex Code equivalent of this number
+            </summary>
+            <param name="number"></param>
+            <param name="include_0x">should "0x" be included at the front of returned value?</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.API.Extensions.ByteExtensions.IsHexEqualTo(System.Byte,System.String)">
+            <summary>
+            Return if the Hex Value of this number is equal to another Hex Value
+            </summary>
+            <param name="number"></param>
+            <param name="equalToHex">Hex Value that we're comparing to</param>
+            <returns></returns>
+        </member>
+        <member name="T:No_Mans_API.API.Input">
+            <summary>
+            Future class to handle keyboard and mouse inputs. Styled after Unity
+            </summary>
+        </member>
+        <member name="M:No_Mans_API.Extensions.DecimalExtensions.ToHexCode(System.Decimal,System.Boolean)">
+            <summary>
+            Returns the Hex Code equivalent of this number
+            </summary>
+            <param name="number"></param>
+            <param name="include_0x">should "0x" be included at the front of returned value?</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.DecimalExtensions.IsHexEqualTo(System.Decimal,System.String)">
+            <summary>
+            Return if the Hex Value of this number is equal to another Hex Value
+            </summary>
+            <param name="number"></param>
+            <param name="equalToHex">Hex Value that we're comparing to</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.DecimalExtensions.Round(System.Decimal,System.Int32)">
+            <summary>
+            Return a rounded version of this number
+            </summary>
+            <param name="number"></param>
+            <param name="decimals">Number of decimal places to round to. Default is 2</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.DoubleExtensions.ToHexCode(System.Double,System.Boolean)">
+            <summary>
+            Returns the Hex Code equivalent of this number
+            </summary>
+            <param name="number"></param>
+            <param name="include_0x">should "0x" be included at the front of returned value?</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.DoubleExtensions.IsHexEqualTo(System.Double,System.String)">
+            <summary>
+            Return if the Hex Value of this number is equal to another Hex Value
+            </summary>
+            <param name="number"></param>
+            <param name="equalToHex">Hex Value that we're comparing to</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.DoubleExtensions.Round(System.Double,System.Int32)">
+            <summary>
+            Return a rounded version of this number
+            </summary>
+            <param name="number"></param>
+            <param name="decimals">Number of decimal places to round to. Default is 2</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.FloatExtensions.ToHexCode(System.Single,System.Boolean)">
+            <summary>
+            Returns the Hex Code equivalent of this number
+            </summary>
+            <param name="number"></param>
+            <param name="include_0x">should "0x" be included at the front of returned value?</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.FloatExtensions.IsHexEqualTo(System.Single,System.String)">
+            <summary>
+            Return if the Hex Value of this number is equal to another Hex Value
+            </summary>
+            <param name="number"></param>
+            <param name="equalToHex">Hex Value that we're comparing to</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.FloatExtensions.Round(System.Single,System.Int32)">
+            <summary>
+            Return a rounded version of this number
+            </summary>
+            <param name="number"></param>
+            <param name="decimals">Number of decimal places to round to. Default is 2</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.IntExtensions.ToHexCode(System.Int32,System.Boolean)">
+            <summary>
+            Returns the Hex Code equivalent of this number
+            </summary>
+            <param name="number"></param>
+            <param name="include_0x">should "0x" be included at the front of returned value?</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.IntExtensions.IsHexEqualTo(System.Int32,System.String)">
+            <summary>
+            Return if the Hex Value of this number is equal to another Hex Value
+            </summary>
+            <param name="number"></param>
+            <param name="equalToHex">Hex Value that we're comparing to</param>
+            <returns></returns>
+        </member>
+        <member name="M:No_Mans_API.Extensions.TypeExtensions.IsDecimalType(System.Type)">
+            <summary>
+            Returns whether or not this type is one that can have a decimal point. Ex: float, double, decimal
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="T:No_Mans_API.OutputType">
+            <summary>
+            Which medium do you want the message to output to?
+            </summary>
+        </member>
+        <member name="F:No_Mans_API.Logger.instance">
+            <summary>
+            Singleton instance of this class
+            </summary>
+        </member>
+        <member name="M:No_Mans_API.Logger.OnMessageLogged(No_Mans_API.Logger.LogEvents)">
+            <summary>
+            When a message has been sent to the Output() function
+            </summary>
+            <param name="e">LogEvent args containing the output message</param>
+        </member>
+        <member name="M:No_Mans_API.Logger.Log(System.String,No_Mans_API.LogLevel,No_Mans_API.OutputType)">
+            <summary>
+            Passes message to OnMessageLogged for Event Handling.
+            </summary>
+            <param name="text">Message to output to user</param>
+        </member>
+    </members>
+</doc>
