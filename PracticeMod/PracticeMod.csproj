@@ -4,8 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(TargetDir)$(TargetFileName)&quot; &quot;F:\Program Files (x86)\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS\MODS&quot; /y" />
+  </Target>
+
   <ItemGroup>
-    <ProjectReference Include="..\NMS_ModHelper.Lib\NMS_ModHelper.Lib.csproj" />
+    <Reference Include="NMS ModHelper">
+      <HintPath>F:\Program Files (x86)\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS\MODS\NMS ModHelper.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

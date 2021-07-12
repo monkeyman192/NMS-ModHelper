@@ -22,7 +22,6 @@ namespace NMS_ModHelper
             return (T)Convert.ChangeType(memoryAddress.GetValue(), typeof(T));
         }
 
-
         public T GetValue()
         {
             return MemoryManager.Read<T>(address);

@@ -7,9 +7,33 @@ namespace NMS_ModHelper.Api
     public class GameInfo
     {
         #region Properties
-        public string GameDirectory { get; private set; }
-        public string ModsDirectory { get; private set; }
-        
+
+        public string GameDirectory
+        {
+            get 
+            {
+                if (string.IsNullOrEmpty(gameDirectory))
+                    gameDirectory = TryGetGameDir();
+
+                return gameDirectory;
+            }
+            private set { gameDirectory = value; }
+        }
+        private string gameDirectory;
+
+        public string ModsDirectory
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(gameDirectory))
+                    gameDirectory = TryGetModsDir();
+
+                return gameDirectory;
+            }
+            private set { ModsDirectory = value; }
+        }
+        private string modsDirectory;
+
         public string GameVersion
         {
             get 
@@ -21,6 +45,7 @@ namespace NMS_ModHelper.Api
                 return gameVersion;}
         }
         private string gameVersion;
+
         #endregion
 
         #region Constructors
@@ -42,6 +67,14 @@ namespace NMS_ModHelper.Api
             return null;
         }
 
+        public string TryGetModsDir()
+        {
+            if (string.IsNullOrEmpty(GameDirectory))
+                return null;
+
+            return GameDirectory + "\\GAMEDATA\\PCBANKS\\MODS";
+        }
+
         public bool IsGameInstalled()
         {
             return WinInfo.IsProgramInstalled("No Man's Sky");
@@ -50,7 +83,6 @@ namespace NMS_ModHelper.Api
         public static GameInfo GetGameInfo()
         {
             var gameInfo = new GameInfo();
-
             return gameInfo;
         }
     }

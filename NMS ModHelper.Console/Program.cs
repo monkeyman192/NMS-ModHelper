@@ -16,16 +16,17 @@
 
             var player = Player.main;
 
-            Console.WriteLine(player.Name);
-            Console.WriteLine(player.Units);
-            Console.WriteLine(player.Nanites);
-            Console.WriteLine(player.QuickSilver);
+            Logger.Log(player.Name);
+            Logger.Log(player.Units);
+            Logger.Log(player.Nanites);
+            Logger.Log(player.QuickSilver);
 
-            Console.WriteLine(player.exosuitGeneralItems[0].TechType);
-            Console.WriteLine(player.exosuitGeneralItems[0].StackSize);
+            Logger.Log(player.exosuitGeneralItems[0].TechType);
+            Logger.Log(player.exosuitGeneralItems[0].StackSize);
 
             var gameInfo = GameInfo.GetGameInfo();
-            Console.WriteLine(gameInfo.TryGetGameDir());
+
+            Logger.Log(gameInfo.TryGetGameDir());
             Console.ReadLine();
         }
 
@@ -40,7 +41,10 @@
 
         private static void LogMessage(object sender, Logger.LogEvents e)
         {
-            Console.WriteLine(e.Message);
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write(" [" + e.Sender + "] ");
+            Console.ResetColor();
+            Console.Write(e.Message + Environment.NewLine);
         }
     }
 }

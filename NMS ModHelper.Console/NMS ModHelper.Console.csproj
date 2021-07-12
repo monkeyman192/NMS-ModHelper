@@ -5,7 +5,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>NMS_ModHelper.Console</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <AssemblyName>NMS_ModHelper_Patcher</AssemblyName>
+    <AssemblyName>NMS Mod Patcher</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,7 +17,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NMS_ModHelper.Lib\NMS_ModHelper.Lib.csproj" />
+    <ProjectReference Include="..\NMS ModHelper\NMS ModHelper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NMS ModHelper">
+      <HintPath>F:\Program Files (x86)\Steam\steamapps\common\No Man's Sky\GAMEDATA\PCBANKS\MODS\NMS ModHelper.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

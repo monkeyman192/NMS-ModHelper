@@ -2,6 +2,23 @@
 {
     public abstract class NMSMod
     {
+        #region Core events
+
+        public virtual void Start()
+        {
+
+        }
+
+        public virtual void Update()
+        {
+
+        }
+
+        #endregion
+
+
+        #region Input Events
+
         public virtual void OnKeyDown(KeyCode keyCode)
         {
 
@@ -31,5 +48,7 @@
         {
 
         }
+
+        #endregion
     }
 }

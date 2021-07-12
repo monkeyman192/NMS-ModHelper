@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NMS_ModHelper.Api.Utils;
+using System;
 
 namespace NMS_ModHelper
 {
@@ -44,6 +41,7 @@ namespace NMS_ModHelper
 
         public class LogEvents : EventArgs
         {
+            public string Sender { get; set; }
             public string Message { get; set; }
             public OutputType Output { get; set; }
             public LogLevel LogLevel { get; set; } = LogLevel.Normal;
@@ -78,8 +76,10 @@ namespace NMS_ModHelper
         {
             LogEvents args = new LogEvents();
             args.Output = output;
-            args.Message = ">> " + text + Environment.NewLine;
+            args.Sender = AssemblyUtils.GetCallingAssemblyByStackTrace().GetName().Name;
+            args.Message = text;
+
             Instance.OnMessageLogged(args);
-        }
+        }        
     }
 }
