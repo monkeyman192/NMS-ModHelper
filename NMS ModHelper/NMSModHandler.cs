@@ -7,8 +7,9 @@ using System.Reflection;
 
 namespace NMS_ModHelper
 {
-    public class Main
+    public class NMSModHandler
     {
+        public static List<NMSMod> NMSMods { get; set; } = new List<NMSMod>();
         static bool apiInitialized = false;
 
         public static void InitAPI()
@@ -39,7 +40,12 @@ namespace NMS_ModHelper
             if (allPossibleMods.Count > 0)
             {
                 Logger.Log("Mods found! Loading mods...");
-                allPossibleMods.ForEach(mod => mod.Start());
+                allPossibleMods.ForEach(mod => {
+                    NMSMods.Add(mod);
+                    mod.Start();
+                });
+
+                Logger.Log("Finished loading mods.");
             }
         }
 

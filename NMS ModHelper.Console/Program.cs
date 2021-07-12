@@ -34,7 +34,7 @@
         {
             Logger.MessageLogged += LogMessage;
 
-            NMS_ModHelper.Main.InitAPI();
+            NMSModHandler.InitAPI();
 
             Logger.Log("No Mans Sky API has finished initializing...");
         }
